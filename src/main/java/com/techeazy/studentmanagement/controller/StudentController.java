@@ -27,12 +27,6 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 
-	@GetMapping("/welcome")
-	public String welcome() {
-		String text = "Welcome to Student Management";
-
-		return text;
-	}
 
 //	 @PreAuthorize("hasRole('STUDENT') or hasRole('ADMIN')")
 	@PostMapping("/register")

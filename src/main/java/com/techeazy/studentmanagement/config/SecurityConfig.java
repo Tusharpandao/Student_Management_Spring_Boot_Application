@@ -46,7 +46,7 @@ public class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(customizer -> customizer.disable())
             .authorizeHttpRequests(request -> request
-                .requestMatchers("login", "register").permitAll() // Specific rules first
+                .requestMatchers("login", "register","welcome").permitAll() // Specific rules first
                 .requestMatchers("/students/**").hasAnyRole("STUDENT", "ADMIN")
 //                .requestMatchers("/**").hasRole("ADMIN") 
                 .anyRequest().authenticated())
